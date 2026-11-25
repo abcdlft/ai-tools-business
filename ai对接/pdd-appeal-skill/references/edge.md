@@ -125,12 +125,12 @@ node $E key      "订单申诉" --keys Tab --page   # 页面级按键（可移�
 
 快捷方式目标模板（换了目录名和端口即可复制一份）：
 ```
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --user-data-dir="F:\edge-shops\店B" --remote-debugging-port=9223 --no-first-run --no-default-browser-check
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --user-data-dir="F:\edge-shops\店B" --remote-debugging-port=9227 --no-first-run --no-default-browser-check
 ```
 
-- 端口从 9222 起顺延，各实例不可重复（现有兔小贝 = `F:\edge-cdp-profile` + 9222）。
+- 端口从 9227 起顺延，各实例不可重复（9222-9226 已分配，9223 乐言专用禁用；现有兔小贝 = `F:\edge-cdp-profile` + 9222）。
 - 新目录是空的，首次要本人手登一次该店账号，cookie 之后留在目录里。
-- 工具已全部支持用环境变量切端口：`$env:CDP_PORT=9223` 后跑任意脚本即控制对应店（cdp/close/grab/submit/fill/probe/focus-window/reasons/review 均已改）。默认仍是 9222。
+- 工具已全部支持用环境变量切端口：`$env:CDP_PORT=9227` 后跑任意脚本即控制对应店（cdp/close/grab/submit/fill/probe/focus-window/reasons/review 均已改）。默认仍是 9222。
 - 系统在默认 profile 的店（无端口）只能走 browser-mcp 兜底通道，慢且读不到 iframe 文本；建议逐步迁到独立实例。
 
 ## 六之三、工位移动 / U 盘便携方案（2026-11-17 用户最终采用）
@@ -156,14 +156,14 @@ node $E key      "订单申诉" --keys Tab --page   # 页面级按键（可移�
 | 启动脚本 | 浏览器 | 端口 | profile |
 |---|---|---|---|
 | `start-edge.bat` | Edge | 9222 | `F:\edge-cdp-profile`（沿用原登录态） |
-| `start-chrome.bat` | Chrome | 9223 | `F:\浏览器\profiles\chrome` |
+| `start-chrome.bat` | Chrome | 9226 | `F:\浏览器\profiles\chrome` |
 | `start-qqbrowser.bat` | QQ 浏览器 | 9224 | `F:\浏览器\profiles\qqbrowser` |
 | `start-sogou.bat` | 搜狗高速 | 9225 | `F:\浏览器\profiles\sogou` |
 
 - 当前工位实装：Edge / Chrome / QQ 浏览器 / 搜狗（360、2345 只有残留目录无主程序，Firefox 不支持 CDP）。
 - 脚本用 `%~dp0` / `%~d0` 自动取所在目录和盘符，换工位/换盘符不用改；启动前查端口占用，冲突会提示。
-- **AI 怎么控制**：用户会说明「用 9223 跑这台店」，此时把 `$env:CDP_PORT=9223` 再跑 cdp/grab/fill 等脚本；不说明就默认 9222。所有脚本已支持 `CDP_PORT` 覆盖。
-- 加新浏览器：复制 `F:\浏览器\_模板-其它浏览器.bat`，改端口(9226+)、profile 名、exe 路径；仅 Chromium 内核可用。详见 `F:\浏览器\使用说明.md`。
+- **AI 怎么控制**：用户会说明「用 <端口> 跑这台店」（端口以启动窗口显示的为准，9223 是乐言专用口别用），此时把 `$env:CDP_PORT=<端口>` 再跑 cdp/grab/fill 等脚本；不说明就默认 9222。所有脚本已支持 `CDP_PORT` 覆盖。
+- 加新浏览器：复制 `F:\浏览器\_模板-其它浏览器.bat`，改端口(9227+)、profile 名、exe 路径；仅 Chromium 内核可用。详见 `F:\浏览器\使用说明.md`。
 
 ## 七、CDP 通道（2026-11-16 起主力）
 
