@@ -1,0 +1,8 @@
+{
+  "intervalSec": 300,
+  "markRead": true,
+  "showReadStatus": true,
+  "logDir": "D:\\log",
+  "logKeepDays": 30,
+  "note": "markRead=true 才真的标记已读；showReadStatus=true 日志逐条打印已读状态；改完下一轮生效"
+}
