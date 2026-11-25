@@ -2,7 +2,7 @@
 /**
  * jst-run.cjs —— 聚水潭售后扫描「批量预检 + 快速收货」
  *
- * 提速要点（实测 2026-11-21，本机 360 + CDP 9223）：
+ * 提速要点（实测 2026-11-21，本机 360 + CDP，端口由 CDP_PORT 提供）：
  *  1) 「哪单能收」不走界面，直接在页面里调后端接口（单次 197ms，并发后平均 40ms/单）：
  *     POST https://api.erp321.com/erp/webapi/afterSaleApi/scanning/search/v2?owner_co_id=…&authorize_co_id=…
  *     body {"data":{"value":"<单号>","type":"l_id","isPromptMessage":false},"uid":"","coid":""}
@@ -11,7 +11,7 @@
  *     键盘事件、insertText、JS focus/click 都是 2~20ms。全程只用键盘 + JS。
  *  3) 常驻一个进程内跑完 N 单，避免每次 node 冷启动（约 300ms）+ 重连。
  *
- * 用法（CDP_PORT 默认 9224，360 浏览器；9223 归乐言占用）：
+ * 用法（CDP_PORT 由用户启动时提供；未设置仅兜底 9224，360 浏览器；9223 归乐言占用，别用）：
  *   node jst-run.cjs check <单号...>                          # 批量预检
  *   node jst-run.cjs recv <单号> <本次数量> <次品数量> [--dry]  # 收货一单
  */
