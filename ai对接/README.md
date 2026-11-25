@@ -49,7 +49,7 @@ F:\ai对接\
 │   └── 甲酰胺检测报告\           ← 甲酰胺舆情用，按品牌分
 ├── 浏览器启动器\
 │   ├── start-edge.bat            ← Edge,  端口 9222
-│   ├── start-chrome.bat          ← Chrome,端口 9223
+│   ├── start-chrome.bat          ← Chrome,端口 9226
 │   ├── start-qqbrowser.bat       ← QQ浏览器, 端口 9224
 │   ├── start-sogou.bat           ← 搜狗高速, 端口 9225
 │   ├── _模板-其它浏览器.bat       ← 新增浏览器照此改
@@ -68,13 +68,13 @@ F:\ai对接\
 约定：**一个浏览器 = 一个店铺 = 一个 CDP 端口**。多个浏览器可同时开着，各登各的店。
 
 ### 启动（人来做）
-1. 插 U 盘，双击 `浏览器启动器\start-*.bat` 里对应浏览器的脚本（显示端口，如 `Port : 9223`）。
+1. 插 U 盘，双击 `浏览器启动器\start-*.bat` 里对应浏览器的脚本（显示端口，如 `Port : 9226`）。
 2. 在该窗口本人手动登录当天要管的店铺。
-3. 告诉负责这个店的 AI：**「你用 9223 端口，店是 XX」**。
+3. 告诉负责这个店的 AI：**「你用 9226 端口，店是 XX」**。
 
 ### AI 开跑前（必做，防串台）
 ```powershell
-$env:CDP_PORT = 9223
+$env:CDP_PORT = 9226
 node "F:\ai对接\pdd-appeal-skill\scripts\which-shop.cjs" --expect 店名关键字
 ```
 确认输出 `ok:true`、`loggedInToMms:true`、`expectOk:true` 再动手。`expectOk:false` 或端口连不上 → 停下核实，**绝不带着错端口操作**（否则 A 店的 AI 会点到 B 店的店）。
