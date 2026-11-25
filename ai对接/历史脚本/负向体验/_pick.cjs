@@ -1,0 +1,21 @@
+const fs=require('fs');
+const j=JSON.parse(fs.readFileSync('F:\\减负\\auto\\appeal\\2026-11-17-负向体验3元\\neg-detail.json','utf8'));
+console.log('可申诉单的共性提示核对（从完整正文判断）：\n');
+let noCommon=[], hasCommon=[];
+j.forEach((r,i)=>{
+  if(r.status!=='可申诉')return;
+  const t=r.detailText||'';
+  const c1=/其他用户也曾反馈过类似问题/.test(t);
+  const c2=/反馈比例显著高于同类商品|较多消费者反馈商品问题/.test(t);
+  const common=c1||c2;
+  const product=r.product||'';
+  const brand=/山茶/.test(product)?'山茶花':(/蚕丝/.test(product)?'蚕丝精灵':(/TUTU| Tutu|tutu/i.test(product)?'TUTUBABY':'?'));
+  const line='['+(i+1)+'] '+r.order+' | brand='+brand+' | 共性='+(common?(c2?'强(比例高于同类)':'有(其他用户反馈)'):'无')+' | '+product;
+  console.log(line);
+  (common?hasCommon:noCommon).push({order:r.order,brand,product,common:c2?'强':'有'});
+});
+console.log('\n=== 无共性提示 → 准备提交 '+noCommon.length+' 单 ===');
+noCommon.forEach(x=>console.log(x.order+' | '+x.brand+' | '+x.product));
+console.log('\n=== 有共性提示 → 跳过 '+hasCommon.length+' 单 ===');
+hasCommon.forEach(x=>console.log(x.order+' | '+x.common));
+fs.writeFileSync('F:\\减负\\auto\\appeal\\2026-11-17-负向体验3元\\to-appeal.json',JSON.stringify(noCommon,null,2),'utf8');
