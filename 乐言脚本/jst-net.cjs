@@ -4,12 +4,12 @@
  * 目的：找到可以脱离 UI 批量调用的接口，把「哪些单号有售后单」一次问完，
  *       只对命中的单子驱动界面收货，从而把 N 单的成本从 O(N次UI) 降到 O(1次接口 + 命中数)。
  *
- * 用法：CDP_PORT=9223 node jst-net.cjs <单号>
+ * 用法：CDP_PORT=<端口> node jst-net.cjs <单号>（端口由用户提供；9223 归乐言占用，别用）
  */
 const http = require('http');
 
 const HOST = '127.0.0.1';
-const PORT = Number(process.env.CDP_PORT || 9223);
+const PORT = Number(process.env.CDP_PORT || 9224);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function httpGet(p) {
