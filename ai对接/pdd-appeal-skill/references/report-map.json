@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "note": "检测报告品牌+品类映射。品牌词按 specificity 从高到低排列；命中多条或只命中泛词时脚本会报 ambiguous，必须人工确认，不允许猜。",
+  "roots": [
+    "{DRIVE}ai对接\\报告素材\\B 检测报告",
+    "{USERPROFILE}\\Desktop\\B 检测报告"
+  ],
+  "brands": [
+    {"brand": "兔小贝山茶花", "keywords": ["兔小贝"], "need": ["山茶花"], "dir": "A 山茶花 兔小贝", "expectSample": "兔小贝山茶花"},
+    {"brand": "TUTUBABY山茶花(实为兔小贝)", "keywords": ["tutubaby", "tutu baby"], "need": ["山茶"], "dir": "A 山茶花 兔小贝", "expectSample": "兔小贝山茶花"},
+    {"brand": "MOODO BABY山茶花", "keywords": ["moodo baby", "moodobaby", "牧朵"], "need": [], "dir": "A MOODO BABY 山茶花", "expectSample": "MOODO BABY"},
+    {"brand": "TUTUBABY蚕丝精灵", "keywords": ["蚕丝精灵", "芯柔丝薄"], "need": [], "dir": "A TUTUBABY 蚕丝精灵", "expectSample": "Tutubaby蚕丝精灵"},
+    {"brand": "伊酷熊臻蚕丝", "keywords": ["伊酷熊"], "need": ["臻蚕丝"], "dir": "A 伊酷熊 臻蚕丝", "expectSample": ""},
+    {"brand": "伊酷熊", "keywords": ["伊酷熊"], "need": [], "dir": "A 伊酷熊", "expectSample": ""},
+    {"brand": "南极人羽薄轻芯", "keywords": ["南极人", "羽薄轻芯"], "need": [], "dir": "A 南极人羽薄轻芯", "expectSample": ""},
+    {"brand": "南极芯铂金装", "keywords": ["南极芯"], "need": [], "dir": "A 南极芯 铂金装", "expectSample": ""},
+    {"brand": "吸引力", "keywords": ["吸引力"], "need": [], "dir": "A 吸引力", "expectSample": ""},
+    {"brand": "果C弱酸小贝芯", "keywords": ["果c弱酸", "小贝芯"], "need": [], "dir": "A 果C弱酸 小贝芯", "expectSample": ""},
+    {"brand": "棉花糖小贝芯", "keywords": ["棉花糖"], "need": [], "dir": "A 棉花糖 小贝芯", "expectSample": ""},
+    {"brand": "氧气小森林", "keywords": ["氧气小森林"], "need": [], "dir": "A 氧气小森林", "expectSample": ""},
+    {"brand": "SHOP-XXXX山茶语润", "keywords": ["山茶语润"], "need": [], "dir": "A SHOP-XXXX 山茶语润", "expectSample": ""},
+    {"brand": "瑬金蚕丝", "keywords": ["瑬金"], "need": [], "dir": "A 瑬金 蚕丝", "expectSample": ""},
+    {"brand": "福龙", "keywords": ["福龙"], "need": [], "dir": "A 福龙", "expectSample": ""},
+    {"brand": "零重力", "keywords": ["零重力"], "need": [], "dir": "A 零重力", "expectSample": ""},
+    {"brand": "兔小贝山茶花面膜裤", "keywords": ["兔小贝"], "need": ["面膜裤", "甄蚕丝"], "dir": "B 兔小贝山茶花 甄蚕丝面膜裤", "expectSample": ""},
+    {"brand": "SHOP-XXXX蚕丝面膜裤", "keywords": ["SHOP-XXXX"], "need": ["面膜裤"], "dir": "B SHOP-XXXX蚕丝面膜裤", "expectSample": ""},
+    {"brand": "伊酷熊面膜机卫生裤", "keywords": ["伊酷熊"], "need": ["卫生裤", "面膜"], "dir": "B 伊酷熊面膜机卫生裤", "expectSample": ""}
+  ],
+  "category": [
+    {"label": "拉拉裤", "patterns": ["拉拉裤", "学步裤", "一体裤", "成长裤"], "files": ["拉拉裤.jpg", "拉拉裤.png"]},
+    {"label": "纸尿裤", "patterns": ["纸尿裤", "尿不湿"], "files": ["纸尿裤.jpg", "纸尿裤.png"]},
+    {"label": "卫生巾/安心裤", "patterns": ["卫生巾", "卫生裤", "安心裤", "安睡裤", "面膜裤"], "files": []}
+  ],
+  "ambiguousWords": ["山茶花", "蚕丝", "臻蚕丝", "小贝芯"]
+}
