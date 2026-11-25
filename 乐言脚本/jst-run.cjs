@@ -11,7 +11,7 @@
  *     键盘事件、insertText、JS focus/click 都是 2~20ms。全程只用键盘 + JS。
  *  3) 常驻一个进程内跑完 N 单，避免每次 node 冷启动（约 300ms）+ 重连。
  *
- * 用法（CDP_PORT 默认 9223）：
+ * 用法（CDP_PORT 默认 9224，360 浏览器；9223 归乐言占用）：
  *   node jst-run.cjs check <单号...>                          # 批量预检
  *   node jst-run.cjs recv <单号> <本次数量> <次品数量> [--dry]  # 收货一单
  */
