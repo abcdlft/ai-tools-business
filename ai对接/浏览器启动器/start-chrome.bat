@@ -4,7 +4,7 @@ REM ===== Portable CDP launcher: Google Chrome =====
 REM Double-click this bat. It auto-detects the USB drive letter it lives on.
 
 set "BASE=%~dp0"
-set "PORT=9223"
+set "PORT=9226"
 set "PROFILE=%BASE%profiles\chrome"
 
 set "EXE=%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe"
