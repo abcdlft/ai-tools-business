@@ -28,7 +28,7 @@ user-invocable: true
 用户后续每个 AI 各管一个浏览器店铺，各浏览器用不同 `CDP_PORT`（见 `references/edge.md` 六之四）。**动手前先确认自己连的是哪家店**：
 
 ```powershell
-$env:CDP_PORT = 9223                     # 用户指定/本 AI 负责的端口
+$env:CDP_PORT = 9226                     # 用户指定/本 AI 负责的端口（9223 是乐言专用口，别用）
 node "$S\which-shop.cjs" --expect 店名关键字
 ```
 
