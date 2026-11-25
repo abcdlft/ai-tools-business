@@ -1,0 +1,68 @@
+{
+ "at": "2026-11-23T03:00:30.123Z",
+ "summary": {
+  "afterSale": 1,
+  "mix": 0,
+  "waitReply": 0,
+  "robotBrush": 2,
+  "unsure": 0
+ },
+ "todo": {
+  "AFTERSALE": [
+   {
+    "kind": "AFTERSALE",
+    "reason": "改地址",
+    "store": "SHOP-XXXX",
+    "buyer": "黄*华",
+    "buyerId": "ID-XXXX",
+    "sellerId": "ID-XXXX",
+    "text": "[买家申请修改为新地址]",
+    "tags": [
+     "NOT_REPLY"
+    ],
+    "at": "2026-11-23T02:59:49Z",
+    "read": false
+   }
+  ],
+  "MIX": [],
+  "WAIT_REPLY": [],
+  "PENDING_ROBOT": [
+   {
+    "kind": "PENDING_ROBOT",
+    "reason": "机器人敷衍抢答",
+    "store": "SHOP-XXXX",
+    "buyer": "**",
+    "buyerId": "9698511987813",
+    "sellerId": "ID-XXXX",
+    "text": "实在不好意思让您久等了！我立刻帮您对接物流专员加急催件，同时紧盯物流动态，一有变动马上告知您，辛苦您再耐心等待一下～ ^",
+    "tags": [
+     "ONLY_ROBOT_REPLY"
+    ],
+    "at": "2026-11-23T02:51:13Z",
+    "read": false
+   },
+   {
+    "kind": "PENDING_ROBOT",
+    "reason": "机器人敷衍抢答",
+    "store": "SHOP-XXXX母婴用品专营店",
+    "buyer": "落**",
+    "buyerId": "ID-XXXX",
+    "sellerId": "ID-XXXX",
+    "text": "亲亲欢迎光临，您先别着急，我这边马上给您处理，您放心。 ^",
+    "tags": [
+     "NEED_FOLLOW"
+    ],
+    "at": "2026-11-23T02:47:22Z",
+    "read": false
+   }
+  ],
+  "UNSURE": []
+ },
+ "tick": 10,
+ "snapshot": 10,
+ "unread": 4,
+ "read": 6,
+ "pointable": 1,
+ "marked": 0,
+ "markRead": true
+}
