@@ -9,7 +9,7 @@
  *
  * 所有坐标都按「AfterSaleScan 帧内 CSS 像素」给，脚本自动加 (60,36) 偏移。
  *
- * 用法（CDP_PORT 默认 9223）：
+ * 用法（CDP_PORT 由用户提供，未设置仅兜底 9224；9223 归乐言占用，别用）：
  *   node jst-scan.cjs probe                     # 列输入框 / 按钮 / 商品行
  *   node jst-scan.cjs fill <单号> [--wait 1500] # 点主查询框 → 全选 → 输入 → 回车
  *   node jst-scan.cjs type <帧内x> <帧内y> <文本> [--enter]
